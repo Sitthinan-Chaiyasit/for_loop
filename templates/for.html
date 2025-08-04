@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card shadow mb-4">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">วนซ้ำข้อมูลตามจำนวนที่กรอก</h5>
+  </div>
+  <div class="card-body">
+    <form method="post" action="" class="mb-3">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="count" class="form-label">ป้อนตัวเลขที่ต้องการ</label>
+        <input type="number" name="count" class="form-control" id="count" min="1" placeholder="กรอกจำนวน" required>
+        <div class="form-text">รับข้อมูลตัวเลขที่ต้องการซ้ำ</div>
+      </div>
+      <button type="submit" class="btn btn-success">แสดงผล</button>
+    </form>
+    {% if count %}
+    <div class="card mt-3">
+      <div class="card-header bg-info text-white">ผลลัพธ์</div>
+      <ul class="list-group list-group-flush">
+        {% for item in count %}
+          <li class="list-group-item">ลำดับที่ {{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
