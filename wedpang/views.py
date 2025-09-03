@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import models
 
 def index(request):
     return render(request, 'index.html')
@@ -35,3 +36,10 @@ def multipli(request):
     context['table'] = [(i, number * i) for i in range(1, 13)]
         
     return render(request, 'multiplication.html', context)
+
+def students(request):
+    context = {}
+    context['title'] = "รายชื่อนักเรียน"
+    students = models.Students.objects.all()
+    context['students'] = students
+    return render(request, 'students.html', context)

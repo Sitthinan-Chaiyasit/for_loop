@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'wedpang',
+    'webpage',
 ]
 
 MIDDLEWARE = [
@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'wedpang.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.postgres.rfiinmzbefzbbfgeckrb',
+        'PASSWORD': os.environ.get('SUPABASE_DB_PASSWORD', '0625170235Mm#'),
+        'HOST': 'aws-1-ap-southeast-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -117,11 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # เปลี่ยนจาก 'statics' เป็น 'static'
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'  # เปลี่ยน path ให้ถูกต้อง
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles_build'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'                                                                             
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
