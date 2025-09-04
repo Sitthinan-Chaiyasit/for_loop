@@ -1,10 +1,20 @@
 #!/bin/bash
+set -e  # Stop on error
 
-# ติดตั้ง dependencies
-python3.12 -m pip install -r requirements.txt
+# Build the project
+echo "Building the project..."
+pip install -r requirements.txt
 
-# เก็บ static files
-python3.12 manage.py collectstatic --noinput --clear
+# Make sure the static directory exists
+echo "Creating static directories..."
+mkdir -p static
+mkdir -p staticfiles_build
 
-# รัน migrations (แนะนำให้เพิ่ม)
-python3.12 manage.py migrate
+# Collect static files
+echo "Collecting static files..."
+python manage.py collectstatic --no-input
+
+# Run database migrations
+echo "Running database migrations..."
+python manage.py makemigrations
+python manage.py migrate
