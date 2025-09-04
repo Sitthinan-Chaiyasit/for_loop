@@ -1,0 +1,163 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$2jLH4ksGejI3RnXSWeerAQ$ec3CC/iES5cMSF0LhtTQYvejZAc3jbgGkSLrwrVtEhU=",
+        "last_login": "2025-08-18T02:53:58.995Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-08-18T02:53:49.186Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$4ZRrb8VyzOkIXnuI0FEdHd$E4xEDIUiDHTnvovqaRIBXylatEO4+JHjQyJkcH4NjOI=",
+        "last_login": "2025-08-25T04:33:44.621Z",
+        "is_superuser": true,
+        "username": "admin2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-08-25T02:25:01.573Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$URnByu1B6LCkwaEiJNMY2H$09ondQ/vVQDeEnXS/MkayY1YsQpzN4n2EEO+I5F2YAk=",
+        "last_login": "2025-09-01T01:38:15.701Z",
+        "is_superuser": true,
+        "username": "admin3",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-09-01T01:38:04.603Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "de4d3nt7l1ls8j7x9dpa5jb6ojvqun07",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHMAAVcuvcbCI9BqgaS0q6M_65NutDtPefcF_NhW6vfBi1-zuzMkJ1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtKVoEjdoJRAU2uckkqQtJB3kqoQgbKSmyYFBkGUCD0mCguCgKFmvZ-wPCYDcW:1uqOts:mFyHEN4KnMXkhY1eO3C_RxFs38JDg1wHzDx1rv1UDng",
+        "expire_date": "2025-09-08T04:33:44.624Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "g6oazflwtp3r125anwynaevgf718soo9",
+    "fields": {
+        "session_data": ".eJxVjDsOAjEMBe-SGkWyk40SSnrOEHkdmyygRNpPhbg7rLQFtG9m3stk2taat0XmPBVzNs6cfreR-CFtB-VO7dYt97bO02h3xR50sdde5Hk53L-DSkv91sgxCXrAiJ5hIIUSnEbQgpGEAntFJ5qKDhBTQGJHAB6DEDAymPcH4Lw39A:1ustUt:Z-xWuycj8_amwGLAixHVJI6A5WmbAGsDNuTK5lOvUwo",
+        "expire_date": "2025-09-15T01:38:15.703Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ttxmevhltdrnbd7ln07v1wflo64z56l0",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hCGQmFcuvcMZICpVA0kpV0Z765NutDtf-_9lwi0rSVsnZcwZ3EWIE6_W6T04LqDfKd6azK1ui5zlLsiD9rltWV-Xg7376BQL98aEbyhaNDZEa22FpzXnkdr1OCUAT1NiYHRKiZwOmYYEEz2A1PSSXvx_gCeDjaO:1unq0U:kSWV_wnjnKWruL1W3YFjuDH2E66VKGQ0N4OcBAq1XUc",
+        "expire_date": "2025-09-01T02:53:58.997Z"
+    }
+},
+{
+    "model": "webpage.student",
+    "pk": 1,
+    "fields": {
+        "stid": "6712732103",
+        "name_prefix": "นาย",
+        "first_name": "จิรศํกดิ์",
+        "last_name": "ทองพิละ",
+        "age": 18
+    }
+},
+{
+    "model": "webpage.subjects",
+    "pk": 1,
+    "fields": {
+        "sjid": "4122104",
+        "subjects_name": "การออกแบบและพัฒนาเว็บ",
+        "teacher_name": "อ.พิศาล สุขขี"
+    }
+},
+{
+    "model": "webpage.subjects",
+    "pk": 2,
+    "fields": {
+        "sjid": "4123305",
+        "subjects_name": "การเขียนโปรแกรมคอมพิวเตอร์ชั้นสูง",
+        "teacher_name": "อ.พิศาล สุขขี"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-08-25T03:02:40.413Z",
+        "user": [
+            "admin2"
+        ],
+        "content_type": [
+            "webpage",
+            "student"
+        ],
+        "object_id": "1",
+        "object_repr": "6712732103",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-09-01T01:43:30.463Z",
+        "user": [
+            "admin3"
+        ],
+        "content_type": [
+            "webpage",
+            "subjects"
+        ],
+        "object_id": "1",
+        "object_repr": "4122104",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-09-01T01:51:40.798Z",
+        "user": [
+            "admin3"
+        ],
+        "content_type": [
+            "webpage",
+            "subjects"
+        ],
+        "object_id": "2",
+        "object_repr": "4123305",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]

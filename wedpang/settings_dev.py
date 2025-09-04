@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
+=======
+import os
+>>>>>>> feature-yyy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-48_p=c^4iwf06xxz*%)w6@)9)@555oq3=cbn8e9zv9tanyxc5s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
+=======
+DEBUG = False
+
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+>>>>>>> feature-yyy
 
 
 # Application definition
@@ -37,6 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
+=======
+    
+    'webpage',
+>>>>>>> feature-yyy
 ]
 
 MIDDLEWARE = [
@@ -54,7 +69,11 @@ ROOT_URLCONF = 'wedpang.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': ['templates'],  # Ensure this directory exists in your project
+=======
+        'DIRS': [BASE_DIR / 'templates'],  # Ensure this directory exists in your project
+>>>>>>> feature-yyy
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +92,7 @@ WSGI_APPLICATION = 'wedpang.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
      'default': {
          'ENGINE': 'django.db.backends.sqlite3',
          'NAME': BASE_DIR / 'db.sqlite3',
@@ -80,6 +100,18 @@ DATABASES = {
 }
 
 
+=======
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.postgres.rfiinmzbefzbbfgeckrb',
+        'PASSWORD': os.environ.get('SUPABASE_DB_PASSWORD', '0625170235Mm#'),
+        'HOST': 'aws-1-ap-southeast-1.pooler.supabase.com',
+        'PORT': '5432',
+    }
+}
+
+>>>>>>> feature-yyy
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -98,6 +130,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature-yyy
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -113,9 +149,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [Path.joinpath(BASE_DIR, 'statics')]
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles_build', 'static')
+=======
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles_build'
+>>>>>>> feature-yyy
 
 
 # Default primary key field type
