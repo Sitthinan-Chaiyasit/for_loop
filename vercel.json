@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "wedpang/wsgi.py",
+            "src": "My_profile/wsgi.py",
             "use": "@vercel/python"
         },
         {
@@ -20,7 +20,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "wedpang/wsgi.py"
+            "dest": "My_profile/wsgi.py"
         }
     ]
 }
