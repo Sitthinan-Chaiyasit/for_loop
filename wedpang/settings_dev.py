@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-48_p=c^4iwf06xxz*%)w6@)9)@555oq3=cbn8e9zv9tanyxc5s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'wedpang.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],  # Ensure this directory exists in your project
+        'DIRS': [BASE_DIR / 'templates'],  # Ensure this directory exists in your project
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

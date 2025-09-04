@@ -1,29 +1,66 @@
-{% extends "base.html" %}
+{% include "base.html" %}
 
-{% block content %}
-<div class="mb-4">
-  <h1>{{ title }}</h1>
+<div class="container mt-5">
+  <div class="mb-4">
+    <h1>{{ title }}</h1>
+  </div>
+  
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-2">
+        <input type="number" name="stuid" class="form-control" placeholder="รหัสนักศึกษา" required>
+      </div>
+      <div class="col-md-2">
+        <select name="name_prefix" class="form-control" required>
+          <option value="">คำนำหน้า</option>
+          <option value="นาย">นาย</option>
+          <option value="นาง">นาง</option>
+          <option value="นางสาว">นางสาว</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <input type="text" name="first_name" class="form-control" placeholder="ชื่อ" required>
+      </div>
+      <div class="col-md-2">
+        <input type="text" name="last_name" class="form-control" placeholder="นามสกุล" required>
+      </div>
+      <div class="col-md-2">
+        <input type="number" name="age" class="form-control" placeholder="อายุ" min="1" required>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success">เพิ่มนักเรียน</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- ตารางรายชื่อนักเรียน -->
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">รหัสนักศึกษา</th>
+        <th scope="col">คำนำหน้า</th>
+        <th scope="col">ชื่อ</th>
+        <th scope="col">สกุล</th>
+        <th scope="col">อายุ</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ student.stuid }}</td>
+        <td>{{ student.name_prefix }}</td>
+        <td>{{ student.first_name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.age }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6" class="text-center">ไม่มีข้อมูลนักเรียน</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">รหัสนักศึกษา</th>
-      <th scope="col">ชื่อ</th>
-      <th scope="col">สกุล</th>
-      <th scope="col">อายุ</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for student in students %}
-    <tr>
-      <th scope="row">{{ forloop.counter }}</th>
-      <td>{{ student.stid }}</td>
-      <td>{{ student.first_name }}</td>
-      <td>{{ student.last_name }}</td>
-      <td>{{ student.age }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-{% endblock content %}

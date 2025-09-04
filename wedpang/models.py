@@ -8,12 +8,12 @@ PREFIX_CHOICES = [
 ]
 
 class Students(models.Model) :
-    stuid = models.AutoField(primary_key=True)
-    name_prefix = models.CharField( choices=PREFIX_CHOICES, max_length=10)
+    stuid = models.IntegerField(unique=True)  # รับตัวเลขจากผู้ใช้
+    name_prefix = models.CharField(choices=PREFIX_CHOICES, max_length=10)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    
+    age = models.PositiveIntegerField(null=True, blank=True)
+
     def __str__(self):
-        return str(self.stuid) 
-               
-    
+        return str(self.stuid)
+

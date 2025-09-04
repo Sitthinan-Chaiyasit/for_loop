@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'wedpang.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.rfiinmzbefzbbfgeckrb',
+        'PASSWORD': os.environ.get('SUPABASE_DB_PASSWORD', '0625170235Mm#'),
+        'HOST': 'aws-1-ap-southeast-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 
@@ -117,8 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # เปลี่ยนจาก 'statics' เป็น 'static'
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'  # เปลี่ยน path ให้ถูกต้อง
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # เปลี่ยนจาก 'statics' เป็น 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # เปลี่ยน path ให้ถูกต้อง
 
 
 # Default primary key field type
