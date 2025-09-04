@@ -25,9 +25,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('for/', views.for_view, name='for'),
     path('multiplication/', views.multipli, name='multiplication'),
-<<<<<<< HEAD
+    path('students/', views.students, name='students'),
 ]  
-=======
-     path('students/', views.students, name='students'),
-]
->>>>>>> feature-yyy
